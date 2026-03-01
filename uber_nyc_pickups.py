@@ -24,3 +24,7 @@ data = load_data(10000)
 
 # Notify the reader that the data was successfully loaded. 
 data_load_state.text("Done! (using st.cache_data)")
+
+st.subheader('Map of all pickups')
+
+st.map(data)
