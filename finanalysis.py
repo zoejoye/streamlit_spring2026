@@ -59,3 +59,6 @@ st.subheader("Portfolio Optimization")
 st.write("Optimal Portfolio Weights:")
 for ticker, weight in zip(tickers, optimal_weights):
     st.write(f"{ticker}: {weight:.2%}")
+
+csv_data = stock_data.to_csv()
+st.download_button("Download Stock Data CSV", csv_data, "stock_data.csv")
