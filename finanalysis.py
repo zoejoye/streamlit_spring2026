@@ -24,8 +24,35 @@ def calculate_sortino_ratio(returns, risk_free_rate=0.02):
     downside_deviation = downside_returns.std().mean()
     return (portfolio_return - risk_free_rate) / downside_deviation
 
+### might need more update !!!
+### def portfolio_optimization(returns):
+###     return np.ones(len(returns.columns)) / len(returns.columns)
+
+### 
+###  Added 2026-03-01 for practice
+### 
+
+# Simulate returns for 4 assets
+np.random.seed(42)
+data = np.random.randn(1000, 4) / 100  # 1000 days, 4 assets
+
+# Create a DataFrame with asset names
+returns = pd.DataFrame(data, columns=['Asset_1', 'Asset_2', 'Asset_3', 'Asset_4'])
+
+# Define the equal weight portfolio optimization function
 def portfolio_optimization(returns):
     return np.ones(len(returns.columns)) / len(returns.columns)
+
+# Get the equal weights for the portfolio
+equal_weights = portfolio_optimization(returns)
+
+# Print the equal weights
+print(f"Equal Weights: {equal_weights}")
+
+### 
+###  End of addition
+### 
+
 
 st.title("Financial Analysis Web App")
 
